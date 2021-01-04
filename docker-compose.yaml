@@ -1,0 +1,18 @@
+version: '3'
+services:
+  xyz:
+    build:
+      context: .
+      dockerfile: xyz.Dockerfile
+    links:
+      - redis
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    restart: always
+  redis:
+    image: redis
+    restart: always
+    ports:
+      - 6379:6379

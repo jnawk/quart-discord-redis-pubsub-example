@@ -1,0 +1,13 @@
+# local environment configuration
+.env
+
+# IDE files
+.idea/
+
+# local python venv
+venv
+
+# python cache
+__pycache__/
+.pytest_cache
+

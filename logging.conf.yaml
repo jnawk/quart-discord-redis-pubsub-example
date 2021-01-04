@@ -1,0 +1,27 @@
+---
+version: 1
+formatters:
+  simple:
+    format: '%(asctime)s - %(name)15s - %(levelname)8s - %(message)s'
+
+disable_existing_loggers: False
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+
+
+commmon_logger_config: &common
+  handlers:
+    - console
+  propagate: False
+
+loggers:
+  '': # root logger
+    <<: *common
+    level: DEBUG
+
+
